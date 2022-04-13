@@ -35,10 +35,17 @@ public class Player : MonoBehaviour
         }
     }
 
+    public void Explode()
+    {
+        Destroy(gameObject);//kill the asteroid
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         //Instantiate(explosion, other.transform.position, other.transform.rotation);
         Destroy(gameObject);
         Destroy(other.gameObject);
+        other.transform.GetComponent<Asteroid>()?.Explode();
+
     }
 }
