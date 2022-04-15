@@ -47,5 +47,7 @@ public class Player : MonoBehaviour
         Destroy(other.gameObject);
         other.transform.GetComponent<Asteroid>()?.Explode();
 
+        //game over
+
     }
 }

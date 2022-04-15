@@ -318,7 +318,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpead: 3
   rotationSpeed: 150
-  explosiont: {fileID: 0}
 --- !u!54 &585276178
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -335,6 +334,24 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!1 &937550811 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1520264310067943007, guid: f6509609e0a31f24a93244a1a6fa27cf, type: 3}
+  m_PrefabInstance: {fileID: 5064206125591042138}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &937550815
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 937550811}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1028109882
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -352,11 +369,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5190274079740266508, guid: 5f02ca2efc78f294fabc622cda78bb56, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.6
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5190274079740266508, guid: 5f02ca2efc78f294fabc622cda78bb56, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.06
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 5190274079740266508, guid: 5f02ca2efc78f294fabc622cda78bb56, type: 3}
       propertyPath: m_LocalPosition.z
@@ -388,6 +405,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5190274079740266508, guid: 5f02ca2efc78f294fabc622cda78bb56, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7016826319290380032, guid: 5f02ca2efc78f294fabc622cda78bb56, type: 3}
+      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -735,7 +756,20 @@ PrefabInstance:
       propertyPath: missile
       value: 
       objectReference: {fileID: 2735180690616760460, guid: 556ed05b0c06cff47809c6e21e7802df, type: 3}
-    m_RemovedComponents: []
+    - target: {fileID: 7137151276243688556, guid: f6509609e0a31f24a93244a1a6fa27cf, type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7137151276243688556, guid: f6509609e0a31f24a93244a1a6fa27cf, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7137151276243688556, guid: f6509609e0a31f24a93244a1a6fa27cf, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 7137151276243688556, guid: f6509609e0a31f24a93244a1a6fa27cf, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f6509609e0a31f24a93244a1a6fa27cf, type: 3}
 --- !u!1 &5064206125591042139 stripped
 GameObject:

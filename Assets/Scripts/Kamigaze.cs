@@ -38,7 +38,12 @@ public class Kamigaze : MonoBehaviour
             Destroy(gameObject); //kms
             //todo how do i make it boom
           
-            other.transform.GetComponent<Asteroid>()?.Explode(); 
+            other.transform.GetComponent<Asteroid>()?.Explode();
+
+            if (other.CompareTag("Player")) { 
+                //game over
+            }
+
         }
     }
 
