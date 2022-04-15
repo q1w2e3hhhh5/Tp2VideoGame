@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Shooter : MonoBehaviour
 {
-    public float movementSpeed = 5f, rotationSpeed = 150f;
+    public float movementSpeed = 5f, speed = 1.0f;
 
     public GameObject SPMissile, rightCanon,leftCanon;
 
@@ -12,18 +12,24 @@ public class Shooter : MonoBehaviour
     public float period = 0.1f;
 
 
+    public Transform player;
+
     // Start is called before the first frame update
     void Start()
     {
-        //rotate to specific direction
 
-
-        
     }
 
     // Update is called once per frame
     void Update()
     {
+        //TO REWORK
+        //rotate to specific direction
+        //Vector3 playerDirection = player.position - transform.position;
+        //float signleStep = speed * Time.deltaTime;
+        //Vector3 newDirection = Vector3.RotateTowards(transform.position, playerDirection, signleStep, 0.0f);
+        //.rotation = Quaternion.LookRotation(newDirection);
+
 
         if (Time.time > nextActionTime) { 
             nextActionTime = Time.time + period;

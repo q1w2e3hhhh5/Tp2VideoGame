@@ -107,6 +107,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4907170838834178624}
   - component: {fileID: 1396093980818631308}
+  - component: {fileID: 2761526679363203517}
   m_Layer: 0
   m_Name: Shooter
   m_TagString: Untagged
@@ -142,11 +143,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 5
-  rotationSpeed: 150
+  speed: 1
   SPMissile: {fileID: 2541467605401072593, guid: a6b34ce3f4049f8459aaccc2bdf2519f, type: 3}
   rightCanon: {fileID: 7773116111031046401}
   leftCanon: {fileID: 8745926866736547394}
   period: 3
+  player: {fileID: 4327571385245892246, guid: f6509609e0a31f24a93244a1a6fa27cf, type: 3}
+--- !u!54 &2761526679363203517
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4429691097236320726}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 78
+  m_CollisionDetection: 0
 --- !u!1 &7773116111031046401
 GameObject:
   m_ObjectHideFlags: 0

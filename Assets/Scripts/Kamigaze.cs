@@ -7,7 +7,7 @@ public class Kamigaze : MonoBehaviour
 
     private GameObject playerObj = null;
 
-    public float movementSpead = 0f, rotationSpeed = 150f;
+    public float movementSpead = 0f;
 
 
 
@@ -23,8 +23,8 @@ public class Kamigaze : MonoBehaviour
         if (playerObj != null) {
             transform.position = Vector3.MoveTowards(transform.position, playerObj.transform.position, movementSpead * Time.deltaTime);
 
-            Debug.Log("Player position is: " + playerObj.transform.position);
-            Debug.Log("Kamikaze position is: " + transform.position);
+            //Debug.Log("Player position is: " + playerObj.transform.position);
+            //Debug.Log("Kamikaze position is: " + transform.position);
         }
 
     }
