@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
 
     public GameObject missile, canon;
     public GameObject explosion;
+    private int playerHp = 5;
 
     // Start is called before the first frame update
     void Start()
@@ -33,21 +34,25 @@ public class Player : MonoBehaviour
         {
             Instantiate(missile, canon.transform.position, canon.transform.rotation);
         }
+
+        if (playerHp <= 0)
+        {
+            Instantiate(explosion, gameObject.transform.position, gameObject.transform.rotation);
+            gameObject.transform.GetComponent<Player>()?.Explode();
+        }
+
     }
 
     public void Explode()
     {
-        Destroy(gameObject);//kill the asteroid
+        Destroy(gameObject);
     }
+
 
     private void OnTriggerEnter(Collider other)
     {
-        //Instantiate(explosion, other.transform.position, other.transform.rotation);
-        Destroy(gameObject);
-        Destroy(other.gameObject);
-        other.transform.GetComponent<Asteroid>()?.Explode();
-
-        //game over
-
+        Debug.Log("Hit ");
+        playerHp--;
+        Debug.Log("Player HP: " + playerHp);
     }
 }

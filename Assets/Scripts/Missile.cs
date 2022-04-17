@@ -25,17 +25,25 @@ public class Missile : MonoBehaviour
         Destroy(gameObject);
     }
 
+
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Asteroid"))
+        if (other.CompareTag("Asteroid") || other.CompareTag("Destructible"))
         {
-            Destroy(gameObject); // Detruire le missile
-            Instantiate(explosion, other.transform.position, other.transform.rotation); // Creer une explosion
+            Destroy(gameObject);
+            //Instantiate(explosion, other.transform.position, other.transform.rotation); // Creer une explosion
+            
+            
+            if (other.CompareTag("Asteroid")) {
+                other.transform.GetComponent<Asteroid>()?.Explode();
+            }
 
-            other.transform.GetComponent<Asteroid>()?.Explode(); // Est equivalent a:
-            //var asteroid = other.transform.GetComponent<Asteroid>();
-            //if (asteroid != null)
-            //    asteroid.Explode();
+
+            //this no work why
+          //  if (other.CompareTag("Destructible")) {
+               // other.transform.GetComponent<Kamigaze>()?.Explode();
+           // }
+
         }
     }
 }

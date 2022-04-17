@@ -8,6 +8,9 @@ public class Asteroid : MonoBehaviour
     public float movementSpeed = 0.5f;
     public int nbPoints = 1;
 
+    public GameObject player;
+    public GameObject explosion;
+
     private Vector3 rotation, translation;
 
     // Start is called before the first frame update
@@ -35,6 +38,8 @@ public class Asteroid : MonoBehaviour
             newPos.y = -transform.position.y;
             transform.position = newPos;
         }
+
+
     }
 
     public void Explode()
@@ -42,5 +47,7 @@ public class Asteroid : MonoBehaviour
         //Instantiate(GetComponent("Asteroid"), transform.position, transform.rotation);
         ScoreManager.Instance.AddScore(nbPoints);
         Destroy(gameObject);
+        Instantiate(explosion, gameObject.transform.position, gameObject.transform.rotation);
     }
+
 }

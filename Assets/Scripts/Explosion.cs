@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Explosion : MonoBehaviour
 {
-    public float duration = 1.0f;
-    public float finalSize = 5f;
+    public float duration = 0.75f;
+    public float finalSize = 2f;
 
     private Vector3 initScale;
     private float timeElapsed = 0;

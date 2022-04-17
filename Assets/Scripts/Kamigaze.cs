@@ -5,15 +5,15 @@ using UnityEngine;
 public class Kamigaze : MonoBehaviour
 {
 
-    private GameObject playerObj = null;
-
-    public float movementSpead = 0f;
+    public GameObject explosion;
+    public GameObject playerObj;
+    private int kamigazeHp = 15;
+    public float movementSpeed = 0f;
 
 
 
     void Start()
     {
-        playerObj = GameObject.FindGameObjectWithTag("Player");
 
     }
 
@@ -21,10 +21,15 @@ public class Kamigaze : MonoBehaviour
     {
 
         if (playerObj != null) {
-            transform.position = Vector3.MoveTowards(transform.position, playerObj.transform.position, movementSpead * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, playerObj.transform.position, movementSpeed * Time.deltaTime);
 
             //Debug.Log("Player position is: " + playerObj.transform.position);
             //Debug.Log("Kamikaze position is: " + transform.position);
+        }
+
+        if (kamigazeHp <= 0) {
+            Instantiate(explosion, gameObject.transform.position, gameObject.transform.rotation);
+            Destroy(gameObject); //kms
         }
 
     }
@@ -37,19 +42,10 @@ public class Kamigaze : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.transform.name);
-        if (other.CompareTag("Asteroid") || other.CompareTag("Player"))
-        {
-            Destroy(gameObject); //kms
-            //todo how do i make it boom
-          
-            other.transform.GetComponent<Asteroid>()?.Explode();
-
-            if (other.CompareTag("Player")) { 
-                //game over
-            }
-
-        }
+        kamigazeHp--;
+        Debug.Log("Kamikaze got hit");
+        Debug.Log("Kamigaze : "+ kamigazeHp);
     }
+
 
 }

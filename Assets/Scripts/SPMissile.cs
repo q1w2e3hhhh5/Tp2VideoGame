@@ -10,14 +10,12 @@ public class SPMissile : MonoBehaviour
     private int playerPv = 3;
     private int asteroidPv = 3;
 
-    private GameObject player = null;
-    private GameObject asteriod = null;
+    public GameObject player;
+    public GameObject asteriod;
 
     // Start is called before the first frame update
     void Start()
     {
-        player= GameObject.FindGameObjectWithTag("Player");
-        asteriod = GameObject.FindGameObjectWithTag("Asteroid");
     }
 
     // Update is called once per frame
@@ -35,7 +33,7 @@ public class SPMissile : MonoBehaviour
             asteriod.transform.GetComponent<Asteroid>()?.Explode();
         }
 
-        Debug.Log("Player health: " + playerPv);
+       // Debug.Log("Player health: " + playerPv);
 
     }
 
