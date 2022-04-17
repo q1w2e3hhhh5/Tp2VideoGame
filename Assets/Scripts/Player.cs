@@ -39,7 +39,6 @@ public class Player : MonoBehaviour
         {
             Instantiate(explosion, gameObject.transform.position, gameObject.transform.rotation);
             gameObject.transform.GetComponent<Player>()?.Explode();
-            // Destroy(gameObject);
         }
 
     }
@@ -55,5 +54,6 @@ public class Player : MonoBehaviour
         Debug.Log("Hit ");
         playerHp--;
         Debug.Log("Player HP: " + playerHp);
+        //my own missiles hurt me though
     }
 }

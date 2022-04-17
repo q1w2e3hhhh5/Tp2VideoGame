@@ -33,16 +33,9 @@ public class Missile : MonoBehaviour
             Destroy(gameObject);
             //Instantiate(explosion, other.transform.position, other.transform.rotation); // Creer une explosion
             
-            
             if (other.CompareTag("Asteroid")) {
                 other.transform.GetComponent<Asteroid>()?.Explode();
             }
-
-
-            //this no work why
-          //  if (other.CompareTag("Destructible")) {
-               // other.transform.GetComponent<Kamigaze>()?.Explode();
-           // }
 
         }
     }

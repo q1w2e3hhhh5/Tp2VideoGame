@@ -24,7 +24,7 @@ public class Asteroid : MonoBehaviour
     void Update()
     {
         transform.Rotate(rotation, rotationSpeed * Time.deltaTime);
-        transform.position += translation * Time.deltaTime; //equivalent à transform.Translate(translation * Time.deltaTime, Space.World);
+        transform.position += translation * Time.deltaTime;
 
         if (Mathf.Abs(transform.position.x) > 9f)
         {
@@ -44,7 +44,6 @@ public class Asteroid : MonoBehaviour
 
     public void Explode()
     {
-        //Instantiate(GetComponent("Asteroid"), transform.position, transform.rotation);
         ScoreManager.Instance.AddScore(nbPoints);
         Destroy(gameObject);
         Instantiate(explosion, gameObject.transform.position, gameObject.transform.rotation);

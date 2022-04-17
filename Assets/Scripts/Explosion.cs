@@ -14,8 +14,8 @@ public class Explosion : MonoBehaviour
     void Start()
     {
         initScale = transform.localScale; 
-        Destroy(gameObject, duration); // L'explosion va disparaitre après 'duration' secondes
-        // Équivalent à Invoke("Destroy", timeToLive);
+        Destroy(gameObject, duration);
+
     }
 
     // Update is called once per frame
@@ -23,6 +23,5 @@ public class Explosion : MonoBehaviour
     {
         timeElapsed += Time.deltaTime;
         transform.localScale = initScale * (finalSize * timeElapsed / duration);
-        //transform.localScale = 1.001f * (1 + Time.deltaTime) * scale;
     }
 }
