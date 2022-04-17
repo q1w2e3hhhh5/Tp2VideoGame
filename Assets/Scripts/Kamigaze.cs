@@ -6,31 +6,28 @@ public class Kamigaze : MonoBehaviour
 {
 
     public GameObject explosion;
-    public GameObject playerObj;
+    public GameObject player;
+
     private int kamigazeHp = 15;
-    public float movementSpeed = 0f;
+    public float movementSpeed = 1f;
 
 
 
     void Start()
     {
-
+      
     }
 
     void Update()
     {
-
-        if (playerObj != null) {
-            transform.position = Vector3.MoveTowards(transform.position, playerObj.transform.position, movementSpeed * Time.deltaTime);
-
-            //Debug.Log("Player position is: " + playerObj.transform.position);
-            //Debug.Log("Kamikaze position is: " + transform.position);
+        //makes no sense why does this not work
+        if (player != null) {
+            transform.position = Vector3.MoveTowards(transform.position, player.transform.position, movementSpeed * Time.deltaTime);
+            Debug.Log("Player position is: " + player.transform.position);
+            Debug.Log("Kamikaze position is: " + transform.position);
         }
 
-        if (kamigazeHp <= 0) {
-            Instantiate(explosion, gameObject.transform.position, gameObject.transform.rotation);
-            Destroy(gameObject); //kms
-        }
+
 
     }
 
@@ -45,6 +42,13 @@ public class Kamigaze : MonoBehaviour
         kamigazeHp--;
         Debug.Log("Kamikaze got hit");
         Debug.Log("Kamigaze : "+ kamigazeHp);
+
+        if (kamigazeHp <= 0)
+        {
+            Instantiate(explosion, gameObject.transform.position, gameObject.transform.rotation);
+            Destroy(gameObject); //kms
+        }
+
     }
 
 

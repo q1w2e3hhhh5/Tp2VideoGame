@@ -142,13 +142,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 317d26b236ffd24449e8112b1c8e53c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 5
-  speed: 1
   SPMissile: {fileID: 2541467605401072593, guid: a6b34ce3f4049f8459aaccc2bdf2519f, type: 3}
   rightCanon: {fileID: 7773116111031046401}
   leftCanon: {fileID: 8745926866736547394}
-  period: 1
-  player: {fileID: 4327571385245892246, guid: f6509609e0a31f24a93244a1a6fa27cf, type: 3}
+  nextActionTime: 5
+  period: 3
 --- !u!54 &2761526679363203517
 Rigidbody:
   m_ObjectHideFlags: 0

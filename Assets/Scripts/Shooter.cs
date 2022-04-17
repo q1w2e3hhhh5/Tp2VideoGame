@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class Shooter : MonoBehaviour
 {
-    public float movementSpeed = 5f, speed = 1.0f;
+   // public float movementSpeed = 5f, speed = 1.0f;
 
-    public GameObject SPMissile, rightCanon,leftCanon;
+    public GameObject SPMissile, rightCanon, leftCanon;
 
-    private float nextActionTime = 0.0f;
-    public float period = 0.1f;
+    public float nextActionTime = 4.0f;
+    public float period = 2.0f;
 
 
-    public Transform player;
+    //public Transform player;
 
     // Start is called before the first frame update
     void Start()

@@ -39,6 +39,7 @@ public class Player : MonoBehaviour
         {
             Instantiate(explosion, gameObject.transform.position, gameObject.transform.rotation);
             gameObject.transform.GetComponent<Player>()?.Explode();
+            // Destroy(gameObject);
         }
 
     }

@@ -7,10 +7,9 @@ public class SPMissile : MonoBehaviour
 
 
     public GameObject explosion;
-    private int playerPv = 3;
-    private int asteroidPv = 3;
 
     public GameObject player;
+    public float movementSpeed = 2f;
     public GameObject asteriod;
 
     // Start is called before the first frame update
@@ -22,38 +21,23 @@ public class SPMissile : MonoBehaviour
     void Update()
     {
 
-        if (playerPv <= 0) {
-            Instantiate(explosion, player.transform.position, player.transform.rotation);
-            player.transform.GetComponent<Player>()?.Explode();
-        }
+        transform.Translate(0, movementSpeed * Time.deltaTime, 0);
 
-        if (asteroidPv <= 0)
-        {
-            Instantiate(explosion, asteriod.transform.position, asteriod.transform.rotation);
-            asteriod.transform.GetComponent<Asteroid>()?.Explode();
-        }
+
 
        // Debug.Log("Player health: " + playerPv);
 
     }
 
+    private void OnBecameInvisible()
+    {
+        Destroy(gameObject);
+    }
+
+
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("HIT OR MISS I GUESS THEY NEVER MISS HUH");
-
-        if (other.CompareTag("Player"))
-        {
-            Destroy(gameObject);
-            playerPv--;
-        }
-        if (other.CompareTag("Asteroid"))
-        {
-            Destroy(gameObject);
-            asteroidPv--;
-        }
-
-
-
+        //make that the asteroid has hp?
     }
 
 }
