@@ -11,16 +11,14 @@ public class Shooter : MonoBehaviour
     private GameObject player = null;
     public float speed = 1.0f;
 
-    // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
-    // Update is called once per frame
     void Update()
     {
-        //TO REWORK
+        //does not work is now on a fixed posisition
         //rotate to player direction
         //https://docs.unity3d.com/ScriptReference/Vector3.RotateTowards.html
 

@@ -6,7 +6,7 @@ public class Kamigaze : MonoBehaviour
 {
 
     public GameObject explosion;
-    private GameObject player = null;
+    private GameObject player = null;   //theres a reason to that
 
     private int kamigazeHp = 15;
     public float movementSpeed = 1f;
@@ -20,7 +20,6 @@ public class Kamigaze : MonoBehaviour
 
     void Update()
     {
-        //makes no sense why does this not work
         if (player != null) {
             transform.position = Vector3.MoveTowards(transform.position, player.transform.position, movementSpeed * Time.deltaTime);
             //Debug.Log("Player position is: " + player.transform.position);

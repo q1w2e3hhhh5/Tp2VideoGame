@@ -14,13 +14,12 @@ public class Player : MonoBehaviour
     public float nextActionTime = 0.5f;
     public float period = 0.5f;
 
-    // Start is called before the first frame update
     void Start()
     {
         SpawnHleathHp();
+
     }
 
-    // Update is called once per frame
     void Update()
     {
         float rotation = Input.GetAxis("Horizontal") * rotationSpeed;
@@ -76,7 +75,7 @@ public class Player : MonoBehaviour
     {
         if (other.CompareTag("Health"))
         {
-            playerHp = playerHp + 2;
+            playerHp += 2;
             Destroy(other.gameObject);
             SpawnHleathHp();
         }

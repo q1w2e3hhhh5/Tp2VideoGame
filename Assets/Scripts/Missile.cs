@@ -8,13 +8,11 @@ public class Missile : MonoBehaviour
 
     public GameObject explosion;
 
-    // Start is called before the first frame update
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         transform.Translate(0, movementSpeed * Time.deltaTime, 0);
@@ -31,7 +29,6 @@ public class Missile : MonoBehaviour
         if (other.CompareTag("Asteroid") || other.CompareTag("Destructible"))
         {
             Destroy(gameObject);
-            //Instantiate(explosion, other.transform.position, other.transform.rotation); // Creer une explosion
             
             if (other.CompareTag("Asteroid")) {
                 other.transform.GetComponent<Asteroid>()?.Explode();

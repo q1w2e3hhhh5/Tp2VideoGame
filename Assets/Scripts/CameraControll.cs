@@ -8,7 +8,6 @@ public class CameraControll : MonoBehaviour
     private GameObject player = null;
     private Vector3 originalPos;
 
-    // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -16,10 +15,10 @@ public class CameraControll : MonoBehaviour
 
     }
 
-    // Update is called once per frame
     void Update()
     {
-
+        //not sure if thats whats wanted
+        //doesnt even work properly anyways
         if (player != null) { 
             if (Input.GetAxis("Mouse ScrollWheel") > 0) {
 
