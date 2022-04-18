@@ -10,6 +10,7 @@ TagManager:
   - Kamikaze
   - SpMissile
   - Shooter
+  - Missile
   layers:
   - Default
   - TransparentFX

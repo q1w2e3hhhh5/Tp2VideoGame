@@ -17,8 +17,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Vector3 healthHpPos = new Vector3(Random.Range(-7f, 7f), Random.Range(-4f, 4f), 0f);
-        Instantiate(healthHp, healthHpPos, Quaternion.identity);
+        SpawnHleathHp();
     }
 
     // Update is called once per frame
@@ -81,10 +80,14 @@ public class Player : MonoBehaviour
             Destroy(other.gameObject);
             SpawnHleathHp();
         }
+        else if (other.CompareTag("Missile")){
+        
+        
+        }
         else {
             Debug.Log("Hit ");
             playerHp--;
-            
+
         }
 
     }
